@@ -46,8 +46,18 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    // retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
+    // coroutines
+    implementation(libs.kotlinx.coroutines)
+    //coil
+    implementation(libs.coil.compose)
+    implementation(libs.accompanist.coil)
+    // viewModel
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    //navigation
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
