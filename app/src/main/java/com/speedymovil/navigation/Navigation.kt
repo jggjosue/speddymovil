@@ -26,7 +26,10 @@ fun Navigation() {
             )
         ) {id->
             id.arguments?.getInt("id")?.let { idX ->
-                DetailScreen(id = idX)
+                DetailScreen(
+                    id = idX,
+                    navController = navController
+                )
             }
         }
     }

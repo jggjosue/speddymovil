@@ -20,20 +20,25 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.speedymovil.viewModel.HitsViewModel
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import com.speedymovil.ui.Screen
 import kotlinx.coroutines.delay
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(navController: NavHostController) {
     val movieViewModel = viewModel<HitsViewModel>()
     val state = movieViewModel.state
 
-    SpeedymovilTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(
-            modifier = Modifier.fillMaxSize()
+    // A surface container using the 'background' color from the theme
+    Screen {
+        val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+        Scaffold(
+            topBar = {},
+            modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection)
         ) {
             LazyColumn(
                 modifier = Modifier
@@ -118,6 +123,7 @@ fun HomeScreen(navController: NavHostController) {
                 }
             }
         }
+
     }
 }
 
