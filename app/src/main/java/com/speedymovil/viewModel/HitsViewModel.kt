@@ -62,7 +62,7 @@ class HitsViewModel : ViewModel() {
 }
 
 data class ScreenState(
-    val hits: List<HitsModel> = emptyList(),
+    var hits: List<HitsModel> = emptyList(),
     val page: Int = 1,
     val endReached: Boolean = false,
     val error: String? = null,
